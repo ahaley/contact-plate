@@ -1,0 +1,21 @@
+{
+  "name": "contact-plate.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ahaley/contact-plate",
+  "authors": [
+    "Antonio Haley <antonio.haley@gmail.com>"
+  ],
+  "description": "JS library to provide control within augmented and virtual reality applications.",
+  "main": "server.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "three.js": "*"
+  }
+}
