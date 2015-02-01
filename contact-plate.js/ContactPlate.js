@@ -1,11 +1,11 @@
-var ContactPlate = {};
+var ContactPlate = ContactPlate || {};
 
 (function (ContactPlate) {
 
     var defaults = {
-        Segments: 16
+        segments: 12,
+        radius: 25
     };
-
 
     var material = new THREE.MeshPhongMaterial({
         color: 0xCC3399,
@@ -23,12 +23,27 @@ var ContactPlate = {};
 
     ContactPlate.create = function () {
         var aggregate = new ContactPlate.Aggregate();
-
-        var box = new THREE.Mesh(
-                new THREE.CubeGeometry(30, 30, 4), material);
-
         aggregate.subject = new THREE.Object3D();
-        aggregate.subject.add(box);
+
+        var plateRenderer = ContactPlate.PlateRenderer.Box1.create(material);
+
+        var angleSegment = (Math.PI * 2) / defaults.segments;
+
+        for (var i = 0; i <= defaults.segments; i++) {
+
+            var angle = angleSegment * i;
+
+            var plate = plateRenderer.render();
+
+            plate.matrixAutoUpdate = false;
+
+            var x = Math.cos(angle) * defaults.radius;
+            var y = Math.sin(angle) * defaults.radius;
+
+            plate.matrix.makeTranslation(x, y, 10);
+
+            aggregate.subject.add(plate);
+        }
 
         return aggregate;
     }
