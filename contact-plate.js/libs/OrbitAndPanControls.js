@@ -63,6 +63,10 @@ THREE.OrbitAndPanControls = function ( object, domElement ) {
 	var dollyEnd = new THREE.Vector2();
 	var dollyDelta = new THREE.Vector2();
 
+    var rotateCameraStart = new THREE.Vector2();
+    var rotateCameraEnd = new THREE.Vector2();
+    var rotateCameraDelta = new THREE.Vector2();
+
 	var phiDelta = 0;
 	var thetaDelta = 0;
 	var scale = 1;
@@ -70,7 +74,16 @@ THREE.OrbitAndPanControls = function ( object, domElement ) {
 
 	var lastPosition = new THREE.Vector3();
 
-	var STATE = { NONE : -1, ROTATE : 0, DOLLY : 1, PAN : 2, TOUCH_ROTATE : 3, TOUCH_DOLLY : 4, TOUCH_PAN : 5 };
+	var STATE = {
+        NONE : -1,
+        ROTATE : 0,
+        DOLLY : 1,
+        PAN : 2,
+        TOUCH_ROTATE : 3,
+        TOUCH_DOLLY : 4,
+        TOUCH_PAN : 5,
+        ROTATE_CAMERA: 6
+    };
 	var state = STATE.NONE;
 
 	// events
@@ -101,6 +114,29 @@ THREE.OrbitAndPanControls = function ( object, domElement ) {
 		phiDelta -= angle;
 
 	};
+
+    this.rotateCameraLeft = function (angle) {
+        var camera = scope.object.position;
+        var target = scope.target;
+
+        var frustumAxis = new THREE.Vector3().subVectors(
+            target, camera);
+
+        var yAxis = new THREE.Vector3(0, 1, 0);
+
+        var rotationAxis = new THREE.Vector3();
+
+        rotationAxis.crossVectors(frustumAxis, yAxis);
+        rotationAxis.normalize();
+
+        var rotMatrix = new THREE.Matrix4();
+        rotMatrix.makeRotationAxis(rotationAxis, angle);
+
+        scope.target.multiply(rotMatrix);
+    };
+
+    this.rotateCameraUp = function (angle) {
+    };
 
 	// pass in distance in world space to move left
 	this.panLeft = function ( distance ) {
@@ -258,7 +294,15 @@ THREE.OrbitAndPanControls = function ( object, domElement ) {
 		if ( scope.enabled === false ) { return; }
 		event.preventDefault();
 
-		if ( event.button === 0 ) {
+
+        if (event.button === 0 && event.shiftKey) {
+            if ( scope.noRotate === true ) { return; }
+
+            state = STATE.ROTATE_CAMERA;
+
+            rotateCameraStart.set(event.clientX, event.clientY);
+        }
+        else if ( event.button === 0 ) {
 			if ( scope.noRotate === true ) { return; }
 
 			state = STATE.ROTATE;
@@ -334,6 +378,19 @@ THREE.OrbitAndPanControls = function ( object, domElement ) {
 			panStart.copy( panEnd );
 
 		}
+        else if (state === STATE.ROTATE_CAMERA) {
+            if ( scope.noRotate === true ) { return; }
+
+            rotateCameraEnd.set(event.clientX, event.clientY);
+            rotateCameraDelta.subVectors(rotateCameraEnd, rotateCameraStart);
+
+            var angle = 2 * Math.PI * rotateCameraDelta.x
+                / scope.domElement.width * scope.rotateSpeed;
+
+            scope.rotateCameraLeft(angle);
+
+            rotateCameraStart.copy(rotateCameraEnd);
+        }
 
 	}
 
@@ -407,6 +464,7 @@ THREE.OrbitAndPanControls = function ( object, domElement ) {
 	function touchstart( event ) {
 
 		if ( scope.enabled === false ) { return; }
+
 
 		switch ( event.touches.length ) {
 
