@@ -115,27 +115,29 @@ THREE.OrbitAndPanControls = function ( object, domElement ) {
 
 	};
 
+
     this.rotateCameraLeft = function (angle) {
         var camera = scope.object.position;
         var target = scope.target;
 
-        var frustumAxis = new THREE.Vector3().subVectors(
-            target, camera);
+        var v = new THREE.Vector3().subVectors(target, camera);
 
         var yAxis = new THREE.Vector3(0, 1, 0);
 
-        var rotationAxis = new THREE.Vector3();
-
-        rotationAxis.crossVectors(frustumAxis, yAxis);
-        rotationAxis.normalize();
-
-        var rotMatrix = new THREE.Matrix4();
-        rotMatrix.makeRotationAxis(rotationAxis, angle);
-
-        scope.target.multiply(rotMatrix);
+        v.applyAxisAngle(yAxis, angle);
+        scope.target = v.add(camera);
     };
 
     this.rotateCameraUp = function (angle) {
+
+        var camera = scope.object.position;
+        var target = scope.target;
+
+        var v = new THREE.Vector3().subVectors(target, camera);
+        var zAxis = new THREE.Vector3(0, 0, 1);
+
+        v.applyAxisAngle(zAxis, angle);
+        scope.target = v.add(camera);
     };
 
 	// pass in distance in world space to move left
@@ -388,6 +390,11 @@ THREE.OrbitAndPanControls = function ( object, domElement ) {
                 / scope.domElement.width * scope.rotateSpeed;
 
             scope.rotateCameraLeft(angle);
+
+            var upAngle = 2 * Math.PI * rotateCameraDelta.y
+                / scope.domElement.height * scope.rotateSpeed
+
+            scope.rotateCameraUp(upAngle);
 
             rotateCameraStart.copy(rotateCameraEnd);
         }
