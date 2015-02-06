@@ -99,8 +99,8 @@
           <file leaf-file-name="OrbitAndPanControls.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/contact-plate.js/libs/OrbitAndPanControls.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5661017" vertical-offset="1842" max-vertical-offset="9792">
-                  <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="8" />
+                <state vertical-scroll-proportion="0.6474576" vertical-offset="1842" max-vertical-offset="9808">
+                  <caret line="139" column="8" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="8" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -590,8 +590,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/contact-plate.js/libs/OrbitAndPanControls.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.5661017" vertical-offset="1842" max-vertical-offset="9792">
           <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="8" />
+=======
+        <state vertical-scroll-proportion="0.6474576" vertical-offset="1842" max-vertical-offset="9808">
+          <caret line="139" column="8" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="8" />
+>>>>>>> 2536f65d55796a72a252bce3dd73224e8cb0a96b
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

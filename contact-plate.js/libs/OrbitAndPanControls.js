@@ -134,9 +134,11 @@ THREE.OrbitAndPanControls = function ( object, domElement ) {
         var target = scope.target;
 
         var v = new THREE.Vector3().subVectors(target, camera);
-        
-        var rotAxis = new THREE.Vector3();
 
+        var zAxis = new THREE.Vector3(0, 0, -1);
+
+        var rotAxis = new THREE.Vector3();
+        
         rotAxis.set(v.x, 0, v.z);
         rotAxis.applyAxisAngle(new THREE.Vector3(0, 1, 0), Math.PI / 2);
 
