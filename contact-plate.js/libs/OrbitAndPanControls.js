@@ -122,7 +122,7 @@ THREE.OrbitAndPanControls = function ( object, domElement ) {
 
         var v = new THREE.Vector3().subVectors(target, camera);
 
-        var yAxis = new THREE.Vector3(0, 1, 0);
+        var yAxis = new THREE.Vector3(0, -1, 0);
 
         v.applyAxisAngle(yAxis, angle);
         scope.target = v.add(camera);
@@ -134,9 +134,20 @@ THREE.OrbitAndPanControls = function ( object, domElement ) {
         var target = scope.target;
 
         var v = new THREE.Vector3().subVectors(target, camera);
-        var zAxis = new THREE.Vector3(0, 0, 1);
+        var zAxis = new THREE.Vector3(0, 0, -1);
 
-        v.applyAxisAngle(zAxis, angle);
+        var rotAxis = new THREE.Vector3();
+        
+        rotAxis.set(v.x, 0, v.z);
+        rotAxis.applyAxisAngle(new THREE.Vector3(0, 1, 0), Math.PI / 2);
+
+        if (rotAxis.length() < 0.00001) {
+            rotAxis.crossVectors(v, new THREE.Vector3(v.x, 0, v.z));
+        }
+
+        rotAxis.normalize();
+
+        v.applyAxisAngle(rotAxis, angle);
         scope.target = v.add(camera);
     };
 
