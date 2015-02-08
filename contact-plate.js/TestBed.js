@@ -25,7 +25,6 @@ Leap.loop({ background: true }, {
                 var arrow;
                 for (var j = 0; j < 3; j++){
                     arrow = arrows[i * 3 + j];
-                    console.dir(arrow);
                     arrow.position.fromArray(bone.prevJoint);
                     arrow.setDirection((new THREE.Vector3).fromArray(bone.basis[j]));
                 }

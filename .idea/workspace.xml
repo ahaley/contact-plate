@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="886bdd22-831e-4b19-8df6-606848abd9fc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contact-plate.js/TestBed.js" afterPath="$PROJECT_DIR$/contact-plate.js/TestBed.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contact-plate.js/libs/WorkBench.js" afterPath="$PROJECT_DIR$/contact-plate.js/libs/WorkBench.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contact-plate.js/index.html" afterPath="$PROJECT_DIR$/contact-plate.js/index.html" />
     </list>
     <ignored path="contact-plate.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,23 +48,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="OrbitAndPanControls.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="OrbitAndPanControls.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/contact-plate.js/libs/OrbitAndPanControls.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.39026812" vertical-offset="4979" max-vertical-offset="10438">
-                  <caret line="316" column="40" selection-start-line="316" selection-start-column="40" selection-end-line="316" selection-end-column="40" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
+                <state vertical-scroll-proportion="-1.7586207" vertical-offset="0" max-vertical-offset="10438">
+                  <caret line="3" column="39" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="39" />
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TestBed.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="TestBed.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/contact-plate.js/TestBed.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-11.137931" vertical-offset="0" max-vertical-offset="1377">
-                  <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.4" vertical-offset="51" max-vertical-offset="1360">
+                  <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -85,8 +81,8 @@
           <file leaf-file-name="WorkBench.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/contact-plate.js/libs/WorkBench.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="2737">
-                  <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="1404" max-vertical-offset="2737">
+                  <caret line="104" column="46" selection-start-line="104" selection-start-column="46" selection-end-line="104" selection-end-column="46" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -101,8 +97,8 @@
           <file leaf-file-name="OrbitAndPanControls.new.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/contact-plate.js/libs/OrbitAndPanControls.new.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.47586873" vertical-offset="4624" max-vertical-offset="10166">
-                  <caret line="301" column="24" selection-start-line="301" selection-start-column="24" selection-end-line="301" selection-end-column="24" />
+                <state vertical-scroll-proportion="0.3445946" vertical-offset="4624" max-vertical-offset="10166">
+                  <caret line="293" column="20" selection-start-line="293" selection-start-column="20" selection-end-line="293" selection-end-column="20" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -120,11 +116,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/contact-plate.js/TestBed.js" />
         <option value="$PROJECT_DIR$/contact-plate.js/libs/WorkBench.js" />
         <option value="$PROJECT_DIR$/contact-plate.js/index.html" />
         <option value="$PROJECT_DIR$/contact-plate.js/libs/OrbitAndPanControls.js" />
         <option value="$PROJECT_DIR$/contact-plate.js/libs/OrbitAndPanControls.new.js" />
+        <option value="$PROJECT_DIR$/contact-plate.js/TestBed.js" />
       </list>
     </option>
   </component>
@@ -334,11 +330,31 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/contact-plate.js/PlateRenderer.js">
+    <entry file="file://$PROJECT_DIR$/contact-plate.js/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1049">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="714">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contact-plate.js/libs/OrbitAndPanControls.new.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3445946" vertical-offset="4624" max-vertical-offset="10166">
+          <caret line="293" column="20" selection-start-line="293" selection-start-column="20" selection-end-line="293" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contact-plate.js/libs/WorkBench.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1404" max-vertical-offset="2737">
+          <caret line="104" column="46" selection-start-line="104" selection-start-column="46" selection-end-line="104" selection-end-column="46" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -350,49 +366,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contact-plate.js/TestBed.js">
+    <entry file="file://$PROJECT_DIR$/contact-plate.js/PlateRenderer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.137931" vertical-offset="0" max-vertical-offset="1377">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1049">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contact-plate.js/libs/WorkBench.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="2737">
-          <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contact-plate.js/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="714">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contact-plate.js/libs/OrbitAndPanControls.new.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47586873" vertical-offset="4624" max-vertical-offset="10166">
-          <caret line="301" column="24" selection-start-line="301" selection-start-column="24" selection-end-line="301" selection-end-column="24" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contact-plate.js/libs/OrbitAndPanControls.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39026812" vertical-offset="4979" max-vertical-offset="10438">
-          <caret line="316" column="40" selection-start-line="316" selection-start-column="40" selection-end-line="316" selection-end-column="40" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-1.7586207" vertical-offset="0" max-vertical-offset="10438">
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contact-plate.js/TestBed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4" vertical-offset="51" max-vertical-offset="1360">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
