@@ -44,7 +44,7 @@ var WorkBench = (function () {
         renderer.gammaInput = true;
         renderer.gammaOutput = true;
         renderer.setSize(canvasWidth, canvasHeight);
-        renderer.setClearColorHex(0xAAAAAA, 1.0);
+        renderer.setClearColor(0xAAAAAA, 1.0);
 
         // CAMERA
         camera = new THREE.PerspectiveCamera(38, canvasRatio, 1, 10000);
@@ -147,7 +147,8 @@ var WorkBench = (function () {
     return {
         Scene: scene,
         Gui: gui,
-        RegisterRender: registerRender
+        registerRender: registerRender,
+        render: render
     };
 })();
 
