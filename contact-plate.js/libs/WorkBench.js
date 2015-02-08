@@ -40,11 +40,19 @@ var WorkBench = (function () {
         var canvasRatio = canvasWidth / canvasHeight;
 
         // RENDERER
-        renderer = new THREE.WebGLRenderer({ antialias: true });
+        window.renderer = renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.gammaInput = true;
         renderer.gammaOutput = true;
-        renderer.setSize(canvasWidth, canvasHeight);
+        //renderer.setSize(canvasWidth, canvasHeight);
         renderer.setClearColor(0xAAAAAA, 1.0);
+
+        window.renderer.setSize(window.innerWidth, window.innerHeight);
+        window.renderer.domElement.style.position = 'fixed';
+        window.renderer.domElement.style.top = 0;
+        window.renderer.domElement.style.left = 0;
+        window.renderer.domElement.style.width = '100%';
+        window.renderer.domElement.style.height = '100%';
+
 
         // CAMERA
         camera = new THREE.PerspectiveCamera(38, canvasRatio, 1, 10000);
