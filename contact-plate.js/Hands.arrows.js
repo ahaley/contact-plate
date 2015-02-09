@@ -2,7 +2,7 @@ var ContactPlate = ContactPlate || {};
 
 (function (ContactPlate) {
 
-    ContactPlate.Hands = {
+    ContactPlate.Hands = $.extend({
         arrows: {
             init: function (hand) {
                 var obj = new THREE.Object3D();
@@ -55,7 +55,7 @@ var ContactPlate = ContactPlate || {};
                 return obj;
             }
         }
-    }
+    }, ContactPlate.Hands);
 
 
 })(ContactPlate);
