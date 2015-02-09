@@ -3,7 +3,7 @@ var contactPlate = ContactPlate.create();
 
 contactPlate.subject.position.y = 50;
 
-WorkBench.Scene.add(contactPlate.subject);
+//WorkBench.Scene.add(contactPlate.subject);
 
 WorkBench.registerRender(contactPlate.render);
 
@@ -16,6 +16,7 @@ var hands = ContactPlate.Hands.bones;
 Leap.loop({ background: true }, {
     hand: function(hand){
         hands.render(hand);
+        contactPlate.subject.position.fromArray(hand.palmPosition);
         WorkBench.render();
     }
 })
@@ -23,10 +24,12 @@ Leap.loop({ background: true }, {
     .use('handEntry')
     .on('handFound', function (hand) {
         var obj = hands.init(hand);
+        obj.add(contactPlate.subject);
         WorkBench.Scene.add(obj);
     })
     .on('handLost', function (hand) {
         var obj = hands.cleanup(hand);
+
         WorkBench.Scene.remove(obj);
         WorkBench.render();
     })
