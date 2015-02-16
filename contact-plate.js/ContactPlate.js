@@ -4,7 +4,7 @@ var ContactPlate = ContactPlate || {};
 
     var defaults = {
         segments: 12,
-        radius: 25
+        radius: 55
     };
 
     var material = new THREE.MeshPhongMaterial({
@@ -40,7 +40,7 @@ var ContactPlate = ContactPlate || {};
             var x = Math.cos(angle) * defaults.radius;
             var y = Math.sin(angle) * defaults.radius;
 
-            plate.matrix.makeTranslation(x, y, 10);
+            plate.matrix.makeTranslation(x, y, 60);
 
             aggregate.subject.add(plate);
         }

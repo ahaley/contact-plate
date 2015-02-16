@@ -89,7 +89,7 @@ var WorkBench = (function () {
             newGridY: gridY,
             newGridZ: gridZ,
             newGround: ground,
-            newAxes: axes,
+            newAxes: axes
         };
 
         gui = new dat.GUI();

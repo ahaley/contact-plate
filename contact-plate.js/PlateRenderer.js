@@ -14,7 +14,7 @@ var ContactPlate = ContactPlate || {};
 
     ContactPlate.PlateRenderer.Box1 = {
         create: function(material) {
-            var geometry = new THREE.CubeGeometry(5, 5, 0.4);
+            var geometry = new THREE.CubeGeometry(20, 16, 0.4);
             return new ContactPlate.PlateRenderer(
                 material, geometry
             );
