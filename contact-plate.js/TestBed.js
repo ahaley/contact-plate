@@ -14,14 +14,21 @@ var hands = ContactPlate.Hands.bones;
 
 var markerGeometry = new THREE.CylinderGeometry(2, 4, 40, 32);
 var markerMaterial = new THREE.MeshBasicMaterial({ color: 0x00ffff });
-var marker1 = new THREE.Mesh(markerGeometry, markerMaterial);
+var markerMaterial1 = new THREE.MeshLambertMaterial({
+    color: 0x00ffff,
+    transparent: true,
+    opacity: 0.5
+});
+
+
+var marker1 = new THREE.Mesh(markerGeometry, markerMaterial1);
 var marker = new THREE.Object3D();
 
 marker1.position.y = 50;
 marker.add(marker1);
 marker.matrixAutoUpdate = false;
 
-WorkBench.Scene.add(marker);
+//WorkBench.Scene.add(marker);
 
 var startAxis = new THREE.Vector3(0, 1, 0);
 var startAxisM = new THREE.Vector3(0, 0, 1);

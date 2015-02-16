@@ -13,6 +13,12 @@ var ContactPlate = ContactPlate || {};
         shininess: 20
     });
 
+    var transparentMaterial = new THREE.MeshLambertMaterial({
+        color: 0xCC3399,
+        transparent: true,
+        opacity: 0.5
+    });
+
     ContactPlate.Aggregate = function () {
 
     };
@@ -25,7 +31,7 @@ var ContactPlate = ContactPlate || {};
         var aggregate = new ContactPlate.Aggregate();
         aggregate.subject = new THREE.Object3D();
 
-        var plateRenderer = ContactPlate.PlateRenderer.Box1.create(material);
+        var plateRenderer = ContactPlate.PlateRenderer.Box1.create(transparentMaterial);
 
         var angleSegment = (Math.PI * 2) / defaults.segments;
 
