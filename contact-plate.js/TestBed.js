@@ -1,4 +1,6 @@
-var contactPlate = ContactPlate.create();
+
+var options = { segments: 12 };
+var contactPlate = ContactPlate.create(options);
 
 contactPlate.subject.matrixAutoUpdate = false;
 

@@ -2,10 +2,6 @@ var ContactPlate = ContactPlate || {};
 
 (function (ContactPlate) {
 
-    var defaults = {
-        segments: 12,
-        radius: 55
-    };
 
     var material = new THREE.MeshPhongMaterial({
         color: 0xCC3399,
@@ -19,6 +15,13 @@ var ContactPlate = ContactPlate || {};
         opacity: 0.5
     });
 
+    var defaults = {
+        segments: 12,
+        radius: 55,
+        material: transparentMaterial,
+        rendererFactory: ContactPlate.PlateRenderer.Box1.create
+    };
+
     ContactPlate.Aggregate = function () {
 
     };
@@ -27,15 +30,18 @@ var ContactPlate = ContactPlate || {};
 
     };
 
-    ContactPlate.create = function () {
+    ContactPlate.create = function (options) {
+
+        options = $.extend(defaults, options);
+
         var aggregate = new ContactPlate.Aggregate();
         aggregate.subject = new THREE.Object3D();
 
-        var plateRenderer = ContactPlate.PlateRenderer.Box1.create(transparentMaterial);
+        var plateRenderer = options.rendererFactory(options.material);
 
-        var angleSegment = (Math.PI * 2) / defaults.segments;
+        var angleSegment = (Math.PI * 2) / options.segments;
 
-        for (var i = 0; i <= defaults.segments; i++) {
+        for (var i = 0; i <= options.segments; i++) {
 
             var angle = angleSegment * i;
 
@@ -43,8 +49,8 @@ var ContactPlate = ContactPlate || {};
 
             plate.matrixAutoUpdate = false;
 
-            var x = Math.cos(angle) * defaults.radius;
-            var y = Math.sin(angle) * defaults.radius;
+            var x = Math.cos(angle) * options.radius;
+            var y = Math.sin(angle) * options.radius;
 
             plate.matrix.makeTranslation(x, y, 60);
 
