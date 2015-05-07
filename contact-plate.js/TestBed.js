@@ -1,5 +1,8 @@
 
-var options = { segments: 12 };
+var options = {
+    segments: 12,
+    rendererFactory: ContactPlate.PlateRenderer.BoxWithIndexText.create
+};
 var contactPlate = ContactPlate.create(options);
 
 contactPlate.subject.matrixAutoUpdate = false;

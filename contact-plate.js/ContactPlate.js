@@ -19,7 +19,9 @@ var ContactPlate = ContactPlate || {};
         segments: 12,
         radius: 55,
         material: transparentMaterial,
-        rendererFactory: ContactPlate.PlateRenderer.Box1.create
+        rendererFactory: ContactPlate.PlateRenderer.Box1.create,
+
+
     };
 
     ContactPlate.Aggregate = function () {
@@ -41,11 +43,11 @@ var ContactPlate = ContactPlate || {};
 
         var angleSegment = (Math.PI * 2) / options.segments;
 
-        for (var i = 0; i <= options.segments; i++) {
+        for (var i = 0; i < options.segments; i++) {
 
             var angle = angleSegment * i;
 
-            var plate = plateRenderer.render();
+            var plate = plateRenderer.render(i);
 
             plate.matrixAutoUpdate = false;
 
