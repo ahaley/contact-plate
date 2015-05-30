@@ -2,15 +2,19 @@ var ContactPlate = ContactPlate || {};
 
 (function (ContactPlate) {
 
+    const color0 = 0xCC3399;
+    const color1 = 0x2C5F7A;
+    const color2 = 0x4E7093;
+    const color3 = 0x70B5C5;
 
     var material = new THREE.MeshPhongMaterial({
-        color: 0xCC3399,
-        specular: 0xCC3399,
+        color: color1,
+        specular: color1,
         shininess: 20
     });
 
     var transparentMaterial = new THREE.MeshLambertMaterial({
-        color: 0xCC3399,
+        color: color3,
         transparent: true,
         opacity: 0.5
     });
@@ -19,9 +23,7 @@ var ContactPlate = ContactPlate || {};
         segments: 12,
         radius: 55,
         material: transparentMaterial,
-        rendererFactory: ContactPlate.PlateRenderer.Box1.create,
-
-
+        rendererFactory: ContactPlate.PlateRenderer.Box1.create
     };
 
     ContactPlate.Aggregate = function () {

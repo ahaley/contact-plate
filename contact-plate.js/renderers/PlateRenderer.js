@@ -7,7 +7,7 @@ var ContactPlate = ContactPlate || {};
         this.geometry = geometry;
     };
 
-    ContactPlate.PlateRenderer.Box1 = {
+    var Box1 = ContactPlate.PlateRenderer.Box1 = {
         create: function(material) {
             var geometry = new THREE.CubeGeometry(20, 16, 0.4);
 
@@ -27,8 +27,7 @@ var ContactPlate = ContactPlate || {};
 
     ContactPlate.PlateRenderer.BoxWithIndexText = {
         create: function (material) {
-            var boxR = ContactPlate.PlateRenderer.Box1.create(material);
-
+            var boxR = Box1.create(material);
 
             return {
                 render: function (i) {

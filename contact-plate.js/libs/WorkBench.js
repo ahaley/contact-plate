@@ -16,12 +16,18 @@ var WorkBench = (function () {
     var ground = true;
     var renders = [];
 
+    const colorOriginal = 0x808080;
+    const color2 = 0x151412;
+
+    const ambientLightColor = 0x222222;
+    const clearColor = 0xAAAAAA;
+
     function initScene() {
         scene = new THREE.Scene();
-        scene.fog = new THREE.Fog(0x808080, 2000, 4000);
+        scene.fog = new THREE.Fog(color2, 2000, 4000);
 
         // LIGHTS
-        var ambientLight = new THREE.AmbientLight(0x222222);
+        var ambientLight = new THREE.AmbientLight(ambientLightColor);
         var light = new THREE.DirectionalLight(0xFFFFFF, 1.0);
         light.position.set(200, 400, 500);
         var light2 = new THREE.DirectionalLight(0xFFFFFF, 1.0);
@@ -44,7 +50,7 @@ var WorkBench = (function () {
         renderer.gammaInput = true;
         renderer.gammaOutput = true;
         //renderer.setSize(canvasWidth, canvasHeight);
-        renderer.setClearColor(0xAAAAAA, 1.0);
+        renderer.setClearColor(color2, 1.0);
 
         window.renderer.setSize(window.innerWidth, window.innerHeight);
         window.renderer.domElement.style.position = 'fixed';
@@ -58,14 +64,15 @@ var WorkBench = (function () {
         camera = new THREE.PerspectiveCamera(38, canvasRatio, 1, 10000);
         // CONTROLS
         cameraControls = new THREE.OrbitAndPanControls(camera, renderer.domElement);
-        camera.position.set(-300, 100, 54);
-        cameraControls.target.set(0, 50, 0);
-        //cameraControls.target.set(54, 106, 33);
+        camera.position.set(0, 400, 400);
+        cameraControls.target.set(0, 100, 0);
     }
+
+    const groundColor = 0x59636D;
 
     function drawHelpers() {
         if (ground) {
-            Coordinates.drawGround({ size: 10000 }, scene);
+            Coordinates.drawGround({ size: 10000, color: groundColor }, scene);
         }
         if (gridX) {
             Coordinates.drawGrid({ size: 10000, scale: 0.01 }, scene);
@@ -80,6 +87,8 @@ var WorkBench = (function () {
             Coordinates.drawAllAxes({ axisLength: 200, axisRadius: 1, axisTess: 50 }, scene);
         }
     }
+
+
 
     function addToDOM() {
         var container = document.getElementById('container');
