@@ -51,7 +51,5 @@ var ContactPlate = ContactPlate || {};
 
         }
     }
-
-
 })(ContactPlate);
 

@@ -1,7 +1,9 @@
 
 var options = {
     segments: 12,
-    rendererFactory: ContactPlate.PlateRenderer.BoxWithIndexText.create
+    //rendererFactory: ContactPlate.PlateRenderer.Box1.create,
+    rendererFactory: ContactPlate.PlateRenderer.BoxWithIndexText.create,
+    name: "rotary-menu"
 };
 var contactPlate = ContactPlate.create(options);
 
@@ -24,7 +26,6 @@ var markerMaterial1 = new THREE.MeshLambertMaterial({
     transparent: true,
     opacity: 0.5
 });
-
 
 var marker1 = new THREE.Mesh(markerGeometry, markerMaterial1);
 var marker = new THREE.Object3D();

@@ -88,8 +88,6 @@ var WorkBench = (function () {
         }
     }
 
-
-
     function addToDOM() {
         var container = document.getElementById('container');
         var canvas = container.getElementsByTagName('canvas');
@@ -144,8 +142,7 @@ var WorkBench = (function () {
         })
     }
 
-    function registerRender(render)
-    {
+    function registerRender(render) {
         renders.push(render);
     }
 
