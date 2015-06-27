@@ -17,4 +17,4 @@ ContactPlate.Behaviors.OrientToCamera = (function (HandObserver) {
         create: create
     };
 
-})(ContactPlate.HandObserver);
+})(ContactPlate.HandObserver);         

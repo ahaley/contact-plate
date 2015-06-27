@@ -6,7 +6,7 @@
     };
 
     var defaults = {
-        segments: 16
+        segments: 12
     };
 
     ContactPlate.RotaryMenu.create = function(options) {

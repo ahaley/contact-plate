@@ -3,8 +3,10 @@ var options = {
     segments: 12,
     //rendererFactory: ContactPlate.PlateRenderer.Box1.create,
     rendererFactory: ContactPlate.PlateRenderer.BoxWithIndexText.create,
-    name: "rotary-menu"
+    //name: "rotary-menu"
+    name: "keyboard"
 };
+
 var contactPlate = ContactPlate.create(options);
 
 contactPlate.subject.matrixAutoUpdate = false;
