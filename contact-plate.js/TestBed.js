@@ -11,7 +11,8 @@ contactPlate.subject.matrixAutoUpdate = false;
 
 var startAxisM = new THREE.Vector3(0, 0, 1);
 
-ContactPlate.Behaviors.OrientWithHand.create(contactPlate.subject, startAxisM);
+//ContactPlate.Behaviors.OrientWithHand.create(contactPlate.subject, startAxisM);
+ContactPlate.Behaviors.OrientToCamera.create(contactPlate.subject, startAxisM, WorkBench.Camera);
 ContactPlate.Behaviors.PositionOnHand.create(contactPlate.subject);
 
 

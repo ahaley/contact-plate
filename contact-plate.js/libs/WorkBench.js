@@ -162,7 +162,8 @@ var WorkBench = (function () {
         Scene: scene,
         Gui: gui,
         registerRender: registerRender,
-        render: render
+        render: render,
+        Camera: camera
     };
 })();
 
