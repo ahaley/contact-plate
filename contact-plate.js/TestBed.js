@@ -9,10 +9,11 @@ var contactPlate = ContactPlate.create(options);
 
 contactPlate.subject.matrixAutoUpdate = false;
 
-var startAxis = new THREE.Vector3(0, 1, 0);
 var startAxisM = new THREE.Vector3(0, 0, 1);
 
-ContactPlate.Behaviors.OrientOnHand.create(contactPlate.subject, startAxisM);
+ContactPlate.Behaviors.OrientWithHand.create(contactPlate.subject, startAxisM);
+ContactPlate.Behaviors.PositionOnHand.create(contactPlate.subject);
+
 
 WorkBench.Scene.add(contactPlate.subject);
 

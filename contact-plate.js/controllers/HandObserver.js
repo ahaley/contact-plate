@@ -1,31 +1,32 @@
 ContactPlate.HandObserver = (function ($) {
 
+    var disabled = true;
+
+    function onKeyDown(e) {
+        if (e.which === 32) {
+           disabled = !disabled;
+        }
+    }
+
+    document.addEventListener('keydown', onKeyDown);
+
     var observers = [];
+
     return {
         register: function (newObserver) {
             observers.push(newObserver);
-
-            return {
-                enable: function () {
-                    delete(newObserver.isDisabled);
-                },
-                disable: function () {
-                    newObserver.isDisabled = true;
-                },
-                toggle: function () {
-                    if (newObserver.isDisabled)
-                        this.enable();
-                    else
-                        this.disable();
-                }
-            }
         },
         handEvent: function (hand) {
+            if (disabled)
+                return;
+
             observers.forEach(function (observer) {
-               if (!observer.isDisabled)
-                   observer(hand);
+               observer(hand);
             });
         }
     }
 
 })($);
+
+
+
