@@ -1,5 +1,3 @@
-var ContactPlate = ContactPlate || {};
-
 (function (ContactPlate) {
 
     ContactPlate.Hands = $.extend({

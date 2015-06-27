@@ -1,5 +1,3 @@
-var ContactPlate = ContactPlate || {};
-
 (function (ContactPlate) {
 
     var baseBoneRotation = (new THREE.Quaternion).setFromEuler(

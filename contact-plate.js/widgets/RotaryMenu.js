@@ -1,5 +1,3 @@
-var ContactPlate = ContactPlate || {};
-
 (function (ContactPlate) {
 
     ContactPlate.RotaryMenu = { name: "rotary-menu" };
@@ -7,11 +5,15 @@ var ContactPlate = ContactPlate || {};
     ContactPlate.RotaryMenu.render = function (scene, camera, renderer) {
     };
 
+    var defaults = {
+        segments: 16
+    };
+
     ContactPlate.RotaryMenu.create = function(options) {
 
-        var aggregate = new ContactPlate.RotaryMenu();
+        options = $.extend(defaults, options);
 
-        aggregate.subject = new THREE.Object3D();
+        var obj = new THREE.Object3D();
 
         var plateRenderer = options.rendererFactory(options.material);
 
@@ -30,10 +32,10 @@ var ContactPlate = ContactPlate || {};
 
             plate.matrix.makeTranslation(x, y, 60);
 
-            aggregate.subject.add(plate);
+            obj.add(plate);
         }
 
-        return aggregate;
+        return obj;
     };
 
     ContactPlate.addWidget(ContactPlate.RotaryMenu);

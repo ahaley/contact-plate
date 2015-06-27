@@ -28,24 +28,40 @@ var ContactPlate = (function () {
         rendererFactory: function () { }
     };
 
-    var widgets = {};
+    var availableWidgets = {};
 
     ContactPlate.addWidget = function (widget) {
-        widgets[name] = widget;
+        availableWidgets[widget.name] = widget;
     };
+
+    ContactPlate.Aggregate = function () {
+        this.subject = new THREE.Object3D;
+    };
+
+    ContactPlate.Aggregate.prototype.render = function (scene, camera, renderer) {
+
+    };
+
 
     ContactPlate.create = function (options) {
 
         options = $.extend(defaults, options);
 
-        if (!widgets.hasOwnProperty("name")) {
+        if (!availableWidgets.hasOwnProperty(options.name)) {
             console.log('Unknown widget name');
             return null;
         }
 
-        var widget = widgets[name];
+        var aggregate = new ContactPlate.Aggregate();
 
-        return widget.create(options);
+        var widgetGenerator = availableWidgets[options.name];
+
+        var widget = widgetGenerator.create(options);
+
+        aggregate.subject.add(widget);
+
+
+        return aggregate;
     };
 
     return ContactPlate;
