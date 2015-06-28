@@ -8,13 +8,12 @@ var rot = contactPlate.add({
     element: "boxWithIndexText",
     xOffset: 120
 });
+
 contactPlate.add({
     name: "keyboard",
     element: "boxWithIndexText",
     xOffset: -100
 });
-
-
 
 contactPlate.subject.matrixAutoUpdate = false;
 

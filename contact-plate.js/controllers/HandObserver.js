@@ -1,14 +1,11 @@
-ContactPlate.HandObserver = (function ($) {
+ContactPlate.HandObserver = (function (ContactPlate) {
 
     var disabled = true;
 
-    function onKeyDown(e) {
-        if (e.which === 32) {
-           disabled = !disabled;
-        }
-    }
-
-    document.addEventListener('keydown', onKeyDown);
+    ContactPlate.KeyboardObserver.register(function (which) {
+        if (which === 32)
+            disabled = !disabled;
+    });
 
     var observers = [];
 
@@ -26,7 +23,7 @@ ContactPlate.HandObserver = (function ($) {
         }
     }
 
-})($);
+})(ContactPlate);
 
 
 
