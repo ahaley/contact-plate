@@ -22,16 +22,23 @@ var ContactPlate = (function () {
     });
 
     var defaults = {
-        segments: 12,
-        radius: 55,
         material: transparentMaterial,
-        rendererFactory: function () { }
+        element: "box1",
+        xOffset: 0,
+        yOffset: 0,
+        zOffset: 0
     };
 
     var availableWidgets = {};
 
+    var availableElements = {};
+
     ContactPlate.addWidget = function (widget) {
         availableWidgets[widget.name] = widget;
+    };
+
+    ContactPlate.addElement = function (element) {
+        availableElements[element.name] = element;
     };
 
     ContactPlate.Aggregate = function () {
@@ -42,8 +49,7 @@ var ContactPlate = (function () {
 
     };
 
-
-    ContactPlate.create = function (options) {
+    ContactPlate.Aggregate.prototype.add = function (options) {
 
         options = $.extend(defaults, options);
 
@@ -52,15 +58,28 @@ var ContactPlate = (function () {
             return null;
         }
 
-        var aggregate = new ContactPlate.Aggregate();
-
         var widgetGenerator = availableWidgets[options.name];
+
+        if (!options.hasOwnProperty("plateRenderer") && options.hasOwnProperty("element")) {
+            options.plateRenderer = availableElements.hasOwnProperty(options.element)
+                ? availableElements[options.element]
+                : { create: function () { } };
+        }
 
         var widget = widgetGenerator.create(options);
 
-        aggregate.subject.add(widget);
+        this.subject.add(widget);
+        var that = this;
+        return {
+            remove: function () {
+                that.subject.remove(widget);
+            }
+        }
+    };
 
 
+    ContactPlate.create = function (options) {
+        var aggregate = new ContactPlate.Aggregate();
         return aggregate;
     };
 

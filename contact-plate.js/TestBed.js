@@ -1,26 +1,35 @@
 
-var options = {
-    segments: 12,
-    //rendererFactory: ContactPlate.PlateRenderer.Box1.create,
-    rendererFactory: ContactPlate.PlateRenderer.BoxWithIndexText.create,
-    //name: "rotary-menu"
-    name: "keyboard"
-};
+var contactPlate = ContactPlate.create();
 
-var contactPlate = ContactPlate.create(options);
+
+var rot = contactPlate.add({
+    segments: 12,
+    name: "rotary-menu",
+    element: "boxWithIndexText",
+    xOffset: 120
+});
+contactPlate.add({
+    name: "keyboard",
+    element: "boxWithIndexText",
+    xOffset: -100
+});
+
+
 
 contactPlate.subject.matrixAutoUpdate = false;
 
 var startAxisM = new THREE.Vector3(0, 0, 1);
 
-//ContactPlate.Behaviors.OrientWithHand.create(contactPlate.subject, startAxisM);
-ContactPlate.Behaviors.OrientToCamera.create(contactPlate.subject, startAxisM, WorkBench.Camera);
-ContactPlate.Behaviors.PositionOnHand.create(contactPlate.subject);
-
+(function(behaviors) {
+    behaviors.OrientWithHand.create(contactPlate.subject, startAxisM);
+    //behaviors.OrientToCamera.create(contactPlate.subject, startAxisM, WorkBench.Camera);
+    behaviors.PositionOnHand.create(contactPlate.subject);
+})(ContactPlate.Behaviors);
 
 WorkBench.Scene.add(contactPlate.subject);
 
 WorkBench.registerRender(contactPlate.render);
+
 
 // to make working with angles easy
 window.TO_RAD = Math.PI / 180;

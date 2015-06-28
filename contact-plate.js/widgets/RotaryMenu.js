@@ -6,7 +6,8 @@
     };
 
     var defaults = {
-        segments: 12
+        segments: 12,
+        radius: 55
     };
 
     ContactPlate.RotaryMenu.create = function(options) {
@@ -15,7 +16,9 @@
 
         var obj = new THREE.Object3D();
 
-        var plateRenderer = options.rendererFactory(options.material);
+        obj.name = this.name;
+
+        var plateRenderer = options.plateRenderer.create(options.material);
 
         var angleSegment = (Math.PI * 2) / options.segments;
 
@@ -34,6 +37,8 @@
 
             obj.add(plate);
         }
+
+        obj.position.x += options.xOffset;
 
         return obj;
     };

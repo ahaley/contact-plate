@@ -8,6 +8,7 @@ var ContactPlate = ContactPlate || {};
     };
 
     var Box1 = ContactPlate.PlateRenderer.Box1 = {
+        name: "box1",
         create: function(material) {
             var geometry = new THREE.CubeGeometry(20, 16, 0.4);
 
@@ -19,6 +20,8 @@ var ContactPlate = ContactPlate || {};
         }
     };
 
+    ContactPlate.addElement(ContactPlate.PlateRenderer.Box1);
+
     var textMaterial = new THREE.MeshLambertMaterial({
         color: 0x333333,
         transparent: true,
@@ -26,6 +29,7 @@ var ContactPlate = ContactPlate || {};
     });
 
     ContactPlate.PlateRenderer.BoxWithIndexText = {
+        name: "boxWithIndexText",
         create: function (material) {
             var boxR = Box1.create(material);
 
@@ -47,9 +51,30 @@ var ContactPlate = ContactPlate || {};
                     return aggregate;
                 }
             }
-
-
         }
-    }
+    };
+
+    ContactPlate.addElement(ContactPlate.PlateRenderer.BoxWithIndexText);
+
+    ContactPlate.PlateRenderer.Skittles = {
+        name: "skittles",
+        create: function () {
+            return {
+                render: function (i) {
+                    var skittleMaterial = new THREE.MeshLambertMaterial({
+                        color: new THREE.Color(
+                            Math.random(), Math.random(), Math.random()),
+                        transparent: true,
+                        opacity: 0.5
+                    });
+                    var geometry = new THREE.SphereGeometry(6);
+                    var obj = new THREE.Mesh(geometry, skittleMaterial);
+                    return obj;
+                }
+            }
+        }
+    };
+
+    ContactPlate.addElement(ContactPlate.PlateRenderer.Skittles);
 })(ContactPlate);
 

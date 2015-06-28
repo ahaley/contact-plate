@@ -16,7 +16,7 @@
 
         options = $.extend(defaults, options);
 
-        var plateRenderer = options.rendererFactory(options.material);
+        var plateRenderer = options.plateRenderer.create(options.material);
 
         var lines = [
             "1234567890-=",
@@ -41,7 +41,7 @@
             }
 
         });
-        obj.position.x -= 140;
+        obj.position.x += -140 + options.xOffset;
 
         return obj;
     };
